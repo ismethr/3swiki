@@ -433,6 +433,21 @@
   margin: 8px 0 0;
 }
 
+.toc-note a {
+  border-bottom: 1px solid #173e33;
+  color: #173e33;
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  margin-top: 12px;
+  padding-bottom: 3px;
+  text-decoration: none;
+}
+
+.toc-note a:hover {
+  color: #a94226;
+}
+
 .chapter-prose {
   font-family: "Noto Sans SC", "Microsoft YaHei", "PingFang SC", system-ui,
     sans-serif;

@@ -43,7 +43,14 @@ Docker Compose 文件。
 课程正文保存在 `content` 目录中，可直接通过 GitHub 网页编辑 Markdown。
 完整操作见 [`docs/内容更新与发布.md`](docs/内容更新与发布.md)：
 
-1. 修改或新增 Markdown 章节；
-2. 创建 Pull Request 并等待构建检查；
-3. 合并到 `main`，GitHub 自动发布新镜像；
+### 日常内容更新
+
+1. 在章节页点击“在 GitHub 编辑本章”；
+2. 修改 Markdown，选择直接提交到 `main`；
+3. GitHub 自动构建并发布新镜像；
 4. fnOS 拉取镜像并重新部署。
+
+### 大型更新
+
+新增整章、大幅改写，或者修改页面程序与部署配置时，使用分支和 Pull Request
+进行校稿与构建检查，再合并到 `main`。
