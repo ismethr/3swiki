@@ -44,6 +44,7 @@ export async function generateMetadata({
 
 function ChapterPage({ chapter }: { chapter: Chapter }) {
   const cover = chapter.cover ?? "/remote-sensing-chapter-1-cover.webp";
+  const editUrl = `https://github.com/ismethr/3swiki/edit/main/content/remote-sensing/${chapter.slug}.md`;
 
   return (
     <main className="reading-shell">
@@ -95,7 +96,10 @@ function ChapterPage({ chapter }: { chapter: Chapter }) {
           </nav>
           <div className="toc-note">
             <span>编辑提示</span>
-            <p>本章内容来自仓库中的 Markdown 文件，可直接在 GitHub 修改。</p>
+            <p>发现错字或需要补充内容，可以直接打开本章的 Markdown 文件。</p>
+            <a href={editUrl} target="_blank" rel="noreferrer">
+              在 GitHub 编辑本章 ↗
+            </a>
           </div>
         </aside>
 
