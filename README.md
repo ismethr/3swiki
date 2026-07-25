@@ -26,3 +26,12 @@ pnpm dev
 执行 `pnpm build:nas` 可生成 `out` 静态目录。也可以直接使用
 `outputs/GEO-OPEN-fnOS部署包.zip`，其中包含预构建页面、Nginx 配置和
 Docker Compose 文件。
+
+推荐使用仓库中的自动发布流程：
+
+1. 内容合并到 `main`；
+2. GitHub Actions 自动构建 `linux/amd64` 与 `linux/arm64` 镜像；
+3. 镜像发布到 `ghcr.io/ismethr/3swiki:latest`；
+4. fnOS 按照 [`deploy/fnos/README.md`](deploy/fnos/README.md) 拉取更新。
+
+每次发布还会保留 `sha-xxxxxxx` 版本标签，便于出现问题时快速回退。

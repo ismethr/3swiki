@@ -1,0 +1,10 @@
+services:
+  geo-open:
+    image: ghcr.io/ismethr/3swiki:latest
+    container_name: geo-open-textbook
+    restart: unless-stopped
+    pull_policy: always
+    ports:
+      - "8088:80"
+    security_opt:
+      - no-new-privileges:true
