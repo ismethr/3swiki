@@ -1,0 +1,754 @@
+.course-shell,
+.reading-shell {
+  min-height: 100vh;
+  background: #f4f2e9;
+  color: #10251f;
+}
+
+.course-header,
+.reader-header {
+  align-items: center;
+  background: rgba(244, 242, 233, 0.94);
+  border-bottom: 1px solid #cfd3c8;
+  display: flex;
+  height: 74px;
+  justify-content: space-between;
+  padding: 0 4.5vw;
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  backdrop-filter: blur(16px);
+}
+
+.course-brand {
+  color: #10251f;
+  display: grid;
+  text-decoration: none;
+}
+
+.course-brand span {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.course-brand small {
+  color: #62716b;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+}
+
+.course-header nav,
+.reader-header nav {
+  align-items: center;
+  display: flex;
+  gap: 22px;
+}
+
+.course-header nav a,
+.reader-header nav a {
+  color: #10251f;
+  font-size: 12px;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.reader-header nav {
+  color: #77817b;
+  font-size: 11px;
+  gap: 9px;
+}
+
+.reader-header nav b {
+  color: #10251f;
+}
+
+.course-hero {
+  display: grid;
+  grid-template-columns: 0.82fr 1.18fr;
+  min-height: calc(100vh - 74px);
+}
+
+.course-hero-copy {
+  align-self: center;
+  padding: 9vw 5vw 9vw 8vw;
+}
+
+.course-overline,
+.catalog-heading > p {
+  color: #c4512e;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+.course-hero h1 {
+  font-family: "Songti SC", "STSong", Georgia, serif;
+  font-size: clamp(58px, 7.4vw, 112px);
+  font-weight: 500;
+  letter-spacing: -0.08em;
+  line-height: 0.86;
+  margin: 34px 0 40px;
+}
+
+.course-hero h1 span {
+  color: #c4512e;
+}
+
+.course-hero-copy > p:not(.course-overline) {
+  color: #596961;
+  font-size: 15px;
+  line-height: 2;
+  max-width: 520px;
+}
+
+.course-stat-row {
+  border-top: 1px solid #cfd3c8;
+  display: flex;
+  gap: 34px;
+  margin-top: 45px;
+  padding-top: 18px;
+}
+
+.course-stat-row span {
+  color: #68756f;
+  font-size: 10px;
+}
+
+.course-stat-row b {
+  color: #10251f;
+  display: block;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.course-cover {
+  min-height: 640px;
+  overflow: hidden;
+  position: relative;
+}
+
+.course-cover img {
+  height: 100%;
+  inset: 0;
+  object-fit: cover;
+  position: absolute;
+  width: 100%;
+}
+
+.course-cover::after {
+  background: rgba(11, 36, 29, 0.22);
+  content: "";
+  inset: 0;
+  position: absolute;
+}
+
+.course-cover > div {
+  align-items: flex-end;
+  bottom: 0;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  left: 0;
+  padding: 30px 34px;
+  position: absolute;
+  right: 0;
+  z-index: 2;
+}
+
+.course-cover span {
+  border: 1px solid rgba(255, 255, 255, 0.62);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 11px;
+  padding: 7px 9px;
+}
+
+.course-cover p {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  margin: 0;
+}
+
+.chapter-catalog {
+  background: #173e33;
+  color: white;
+  display: grid;
+  gap: 8vw;
+  grid-template-columns: 0.65fr 1.35fr;
+  padding: 110px 7vw 120px;
+}
+
+.catalog-heading {
+  align-self: start;
+  position: sticky;
+  top: 120px;
+}
+
+.catalog-heading > p {
+  color: #d9ff63;
+}
+
+.catalog-heading h2 {
+  font-family: "Songti SC", "STSong", Georgia, serif;
+  font-size: clamp(38px, 4vw, 62px);
+  font-weight: 500;
+  letter-spacing: -0.05em;
+  line-height: 1.08;
+  margin: 25px 0;
+}
+
+.catalog-heading span {
+  color: rgba(255, 255, 255, 0.58);
+  display: block;
+  font-size: 12px;
+  line-height: 1.8;
+  max-width: 320px;
+}
+
+.chapter-list {
+  border-top: 1px solid rgba(255, 255, 255, 0.24);
+}
+
+.chapter-row {
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.24);
+  color: white;
+  display: grid;
+  gap: 26px;
+  grid-template-columns: 46px 1fr auto;
+  min-height: 136px;
+  padding: 20px 10px;
+  text-decoration: none;
+}
+
+.chapter-row > span {
+  color: #d9ff63;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 17px;
+}
+
+.chapter-row p {
+  color: #d9ff63;
+  font-size: 9px;
+  letter-spacing: 0.11em;
+  margin: 0 0 8px;
+  text-transform: uppercase;
+}
+
+.chapter-row h3 {
+  font-family: "Songti SC", "STSong", Georgia, serif;
+  font-size: 23px;
+  font-weight: 500;
+  margin: 0 0 9px;
+}
+
+.chapter-row small {
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.chapter-row > b {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 9px;
+  letter-spacing: 0.11em;
+  white-space: nowrap;
+}
+
+.chapter-row.available {
+  background: #214e41;
+  padding-left: 20px;
+  padding-right: 20px;
+  transition:
+    background 180ms ease,
+    transform 180ms ease;
+}
+
+.chapter-row.available:hover {
+  background: #2b5e50;
+  transform: translateX(5px);
+}
+
+.chapter-row.planned {
+  opacity: 0.68;
+}
+
+.course-footer-bar {
+  align-items: center;
+  display: flex;
+  font-size: 11px;
+  justify-content: space-between;
+  padding: 34px 5vw;
+}
+
+.course-footer-bar a {
+  color: #10251f;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.chapter-hero {
+  background: #173e33;
+  color: white;
+  min-height: 520px;
+  overflow: hidden;
+  position: relative;
+}
+
+.chapter-hero > img {
+  height: 100%;
+  inset: 0;
+  object-fit: cover;
+  position: absolute;
+  width: 100%;
+}
+
+.chapter-hero-shade {
+  background: linear-gradient(
+    90deg,
+    rgba(10, 37, 29, 0.94) 0%,
+    rgba(10, 37, 29, 0.72) 48%,
+    rgba(10, 37, 29, 0.16) 100%
+  );
+  inset: 0;
+  position: absolute;
+}
+
+.chapter-hero-copy {
+  max-width: 870px;
+  padding: 100px 7vw 80px;
+  position: relative;
+  z-index: 2;
+}
+
+.chapter-hero-copy > p {
+  color: #d9ff63;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+}
+
+.chapter-hero-copy h1 {
+  font-family: "Songti SC", "STSong", Georgia, serif;
+  font-size: clamp(48px, 6vw, 86px);
+  font-weight: 500;
+  letter-spacing: -0.06em;
+  line-height: 1.06;
+  margin: 30px 0 24px;
+  max-width: 800px;
+}
+
+.chapter-hero-copy > span {
+  color: rgba(255, 255, 255, 0.74);
+  display: block;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.chapter-hero-copy > div {
+  display: flex;
+  gap: 20px;
+  margin-top: 36px;
+}
+
+.chapter-hero-copy > div b {
+  border: 1px solid rgba(255, 255, 255, 0.36);
+  font-size: 10px;
+  font-weight: 500;
+  padding: 8px 10px;
+}
+
+.reading-layout {
+  display: grid;
+  gap: 6vw;
+  grid-template-columns: minmax(190px, 260px) minmax(0, 840px);
+  justify-content: center;
+  padding: 90px 5vw 130px;
+}
+
+.chapter-toc {
+  align-self: start;
+  position: sticky;
+  top: 110px;
+}
+
+.chapter-toc > p {
+  color: #c4512e;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  margin: 0 0 18px;
+}
+
+.chapter-toc nav {
+  border-top: 1px solid #cfd3c8;
+  display: grid;
+}
+
+.chapter-toc nav a {
+  align-items: baseline;
+  border-bottom: 1px solid #cfd3c8;
+  color: #4f625a;
+  display: grid;
+  font-size: 11px;
+  gap: 9px;
+  grid-template-columns: 22px 1fr;
+  line-height: 1.55;
+  padding: 11px 0;
+  text-decoration: none;
+}
+
+.chapter-toc nav a:hover {
+  color: #c4512e;
+}
+
+.chapter-toc nav span {
+  color: #9ca49f;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 9px;
+}
+
+.toc-note {
+  background: #e8eadf;
+  margin-top: 24px;
+  padding: 16px;
+}
+
+.toc-note span {
+  color: #c4512e;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.toc-note p {
+  color: #62716b;
+  font-size: 10px;
+  line-height: 1.75;
+  margin: 8px 0 0;
+}
+
+.chapter-prose {
+  font-family: "Noto Sans SC", "Microsoft YaHei", "PingFang SC", system-ui,
+    sans-serif;
+  min-width: 0;
+}
+
+.chapter-prose > p:first-child {
+  font-size: 17px;
+}
+
+.chapter-prose h2 {
+  border-top: 1px solid #cfd3c8;
+  font-family: "Songti SC", "STSong", Georgia, serif;
+  font-size: clamp(32px, 3.8vw, 48px);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 1.22;
+  margin: 92px 0 30px;
+  padding-top: 22px;
+  scroll-margin-top: 100px;
+}
+
+.chapter-prose h2:first-of-type {
+  margin-top: 0;
+}
+
+.chapter-prose h3 {
+  color: #173e33;
+  font-family: "Songti SC", "STSong", Georgia, serif;
+  font-size: 23px;
+  font-weight: 600;
+  margin: 48px 0 18px;
+}
+
+.chapter-prose p,
+.chapter-prose li {
+  color: #364b43;
+  font-size: 15px;
+  line-height: 2;
+}
+
+.chapter-prose p {
+  margin: 0 0 22px;
+}
+
+.chapter-prose ul,
+.chapter-prose ol {
+  margin: 0 0 26px;
+  padding-left: 24px;
+}
+
+.chapter-prose li {
+  margin: 5px 0;
+  padding-left: 4px;
+}
+
+.chapter-prose strong {
+  color: #10251f;
+}
+
+.chapter-prose a {
+  color: #a94226;
+  text-decoration-color: rgba(169, 66, 38, 0.36);
+  text-underline-offset: 4px;
+}
+
+.chapter-prose blockquote {
+  background: #e6eadc;
+  border-left: 4px solid #d9ff63;
+  margin: 34px 0;
+  padding: 24px 28px;
+}
+
+.chapter-prose blockquote p {
+  margin: 0 0 9px;
+}
+
+.chapter-prose blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+.chapter-prose table {
+  border-collapse: collapse;
+  display: block;
+  font-size: 12px;
+  margin: 30px 0 38px;
+  max-width: 100%;
+  overflow-x: auto;
+  width: max-content;
+}
+
+.chapter-prose th,
+.chapter-prose td {
+  border: 1px solid #c8cdc2;
+  min-width: 132px;
+  padding: 13px 15px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.chapter-prose th {
+  background: #173e33;
+  color: white;
+  font-weight: 650;
+}
+
+.chapter-prose td {
+  color: #43574f;
+  line-height: 1.7;
+}
+
+.chapter-prose tbody tr:nth-child(even) {
+  background: #eeece2;
+}
+
+.chapter-prose details {
+  border: 1px solid #c8cdc2;
+  margin: 28px 0 40px;
+  padding: 0 20px 18px;
+}
+
+.chapter-prose summary {
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 17px 0;
+}
+
+.chapter-next {
+  align-items: center;
+  background: #d9ff63;
+  display: flex;
+  justify-content: space-between;
+  padding: 55px 7vw;
+}
+
+.chapter-next span {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.chapter-next h2 {
+  font-family: "Songti SC", "STSong", Georgia, serif;
+  font-size: clamp(30px, 4vw, 54px);
+  font-weight: 500;
+  margin: 10px 0 0;
+}
+
+.chapter-next a {
+  border: 1px solid #10251f;
+  color: #10251f;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 14px 18px;
+  text-decoration: none;
+}
+
+@media (max-width: 900px) {
+  .course-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .course-hero-copy {
+    padding: 90px 7vw 75px;
+  }
+
+  .course-cover {
+    min-height: 520px;
+  }
+
+  .chapter-catalog {
+    grid-template-columns: 1fr;
+  }
+
+  .catalog-heading {
+    position: static;
+  }
+
+  .reading-layout {
+    grid-template-columns: minmax(0, 760px);
+  }
+
+  .chapter-toc {
+    position: static;
+  }
+
+  .chapter-toc nav {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .chapter-toc nav a:nth-child(odd) {
+    padding-right: 15px;
+  }
+
+  .toc-note {
+    display: none;
+  }
+}
+
+@media (max-width: 620px) {
+  .course-header,
+  .reader-header {
+    height: 66px;
+    padding: 0 18px;
+  }
+
+  .course-header nav a:first-child,
+  .reader-header nav span,
+  .reader-header nav b {
+    display: none;
+  }
+
+  .course-hero-copy {
+    padding: 70px 20px 60px;
+  }
+
+  .course-hero h1 {
+    font-size: 62px;
+  }
+
+  .course-stat-row {
+    gap: 18px;
+  }
+
+  .course-cover {
+    min-height: 370px;
+  }
+
+  .chapter-catalog {
+    padding: 80px 18px 90px;
+  }
+
+  .chapter-row {
+    gap: 14px;
+    grid-template-columns: 30px 1fr;
+    padding: 19px 2px;
+  }
+
+  .chapter-row > b {
+    display: none;
+  }
+
+  .chapter-row h3 {
+    font-size: 19px;
+  }
+
+  .chapter-row.available {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .chapter-hero {
+    min-height: 540px;
+  }
+
+  .chapter-hero-shade {
+    background: rgba(10, 37, 29, 0.76);
+  }
+
+  .chapter-hero-copy {
+    padding: 86px 20px 60px;
+  }
+
+  .chapter-hero-copy h1 {
+    font-size: 48px;
+  }
+
+  .chapter-hero-copy > div {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .reading-layout {
+    padding: 55px 18px 90px;
+  }
+
+  .chapter-toc nav {
+    grid-template-columns: 1fr;
+  }
+
+  .chapter-toc nav a:nth-child(odd) {
+    padding-right: 0;
+  }
+
+  .chapter-prose h2 {
+    font-size: 34px;
+    margin-top: 72px;
+  }
+
+  .chapter-prose h3 {
+    font-size: 21px;
+  }
+
+  .chapter-prose p,
+  .chapter-prose li {
+    font-size: 14px;
+    line-height: 1.9;
+  }
+
+  .chapter-prose blockquote {
+    padding: 20px;
+  }
+
+  .chapter-next {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 28px;
+    padding: 45px 20px;
+  }
+
+  .course-footer-bar {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+    padding: 30px 18px;
+  }
+}

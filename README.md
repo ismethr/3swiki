@@ -6,6 +6,8 @@
 ## 当前版本
 
 - 三门课程统一入口与知识关系
+- “遥感基础与应用”课程目录与第一章完整电子教材
+- 基于 Markdown 的可持续内容编辑系统
 - 课程学习路径
 - 示例章节阅读界面
 - 遥感波段组合交互实验
@@ -35,3 +37,13 @@ Docker Compose 文件。
 4. fnOS 按照 [`deploy/fnos/README.md`](deploy/fnos/README.md) 拉取更新。
 
 每次发布还会保留 `sha-xxxxxxx` 版本标签，便于出现问题时快速回退。
+
+## 编辑与发布教材
+
+课程正文保存在 `content` 目录中，可直接通过 GitHub 网页编辑 Markdown。
+完整操作见 [`docs/内容更新与发布.md`](docs/内容更新与发布.md)：
+
+1. 修改或新增 Markdown 章节；
+2. 创建 Pull Request 并等待构建检查；
+3. 合并到 `main`，GitHub 自动发布新镜像；
+4. fnOS 拉取镜像并重新部署。

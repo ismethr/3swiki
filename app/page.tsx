@@ -1,6 +1,23 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import Link from "next/link";
+import { useMemo, useState, useSyncExternalStore } from "react";
+
+const lessonStatusEvent = "geo-lesson-status-change";
+
+function subscribeToLessonStatus(callback: () => void) {
+  window.addEventListener("storage", callback);
+  window.addEventListener(lessonStatusEvent, callback);
+
+  return () => {
+    window.removeEventListener("storage", callback);
+    window.removeEventListener(lessonStatusEvent, callback);
+  };
+}
+
+function getLessonStatus() {
+  return localStorage.getItem("geo-lesson-complete") === "true";
+}
 
 const courses = [
   {
@@ -13,6 +30,7 @@ const courses = [
     chapters: 8,
     tone: "green",
     tags: ["信息获取", "空间分析", "综合应用"],
+    href: "#path",
   },
   {
     code: "RS",
@@ -24,6 +42,7 @@ const courses = [
     chapters: 7,
     tone: "rust",
     tags: ["遥感原理", "影像处理", "环境监测"],
+    href: "/courses/remote-sensing",
   },
   {
     code: "CARTO",
@@ -35,6 +54,7 @@ const courses = [
     chapters: 6,
     tone: "blue",
     tags: ["地图语言", "地图投影", "专题制图"],
+    href: "#cases",
   },
 ];
 
@@ -86,11 +106,11 @@ export default function Home() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [query, setQuery] = useState("");
   const [bandMode, setBandMode] = useState<"natural" | "false">("natural");
-  const [completed, setCompleted] = useState(false);
-
-  useEffect(() => {
-    setCompleted(localStorage.getItem("geo-lesson-complete") === "true");
-  }, []);
+  const completed = useSyncExternalStore(
+    subscribeToLessonStatus,
+    getLessonStatus,
+    () => false,
+  );
 
   const filteredSearch = useMemo(
     () =>
@@ -102,8 +122,8 @@ export default function Home() {
 
   const toggleComplete = () => {
     const next = !completed;
-    setCompleted(next);
     localStorage.setItem("geo-lesson-complete", String(next));
+    window.dispatchEvent(new Event(lessonStatusEvent));
   };
 
   const scrollTo = (id: string) => {
@@ -303,7 +323,7 @@ export default function Home() {
               </div>
               <div className="course-footer">
                 <span>{course.chapters} 个章节</span>
-                <button onClick={() => scrollTo("lesson")}>进入课程 ↗</button>
+                <Link href={course.href}>进入课程 ↗</Link>
               </div>
             </article>
           ))}
