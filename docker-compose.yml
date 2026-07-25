@@ -1,0 +1,7 @@
+services:
+  geo-open:
+    build: .
+    container_name: geo-open-textbook
+    restart: unless-stopped
+    ports:
+      - "8088:80"
